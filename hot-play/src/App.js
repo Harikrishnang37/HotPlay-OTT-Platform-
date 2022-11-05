@@ -1,9 +1,10 @@
+import LogIn from './LoginPage/LoginPage';
 import SignUp from './SignUpPage/SignUp';
 
 function App() {
   return (
     <div className="App">
-        <SignUp></SignUp>
+        <LogIn></LogIn>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import LogIn from './LoginPage/LoginPage';
 import SignUp from './SignUpPage/SignUp';
-import HomePage from './HomePage/HomePage';
+import Home from './HomePage/Home';
 
 function App() {
   return (
     <div className="App">
-        <HomePage></HomePage>
+        <LogIn></LogIn>
     </div>
   );
 }

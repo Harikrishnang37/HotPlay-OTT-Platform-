@@ -1,7 +1,14 @@
 import React from 'react';
 import  './L1.css';
+import { useNavigate } from "react-router-dom";
+
+
 export default function LoginForm (props)
+{   const navigate = useNavigate()
+    function handlechange()
 {
+  navigate('Signup');
+}
     return(
         <div className='Login-box'>
             <h2> Login</h2>
@@ -29,13 +36,11 @@ export default function LoginForm (props)
             
                 <div className = "signUp-From-signIn">
                 <p>Don't have an Account?</p>
-                    <button className='signUp-button-From-signIn'> Sign Up </button>
+                    <button className='signUp-button-From-signIn' onClick={handlechange}> Sign Up </button>
+                  
                 </div>
-
-                
-                
-                
             </form>
+                
         </div>
     )
 }

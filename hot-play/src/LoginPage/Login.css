@@ -177,11 +177,11 @@ input[type=submit]:hover {
 		
 }
 .signUp-button-From-signIn:hover{
-	background-color: #abb1ab;
+	background-color: #373937;
 	padding: 12px 20px;
 	border-radius: 10px;
 	border: solid blanchedalmond;
-	font-size: 10px;
+	font-size: 13px;
 }
 
 .signUp-From-signIn

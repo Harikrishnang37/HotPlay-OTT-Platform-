@@ -41,7 +41,7 @@ table{
 }
 
 input[type=email] {
-	width: 100%;
+	width: 130%;
 	padding: 12px;
 	border: 1px solid #ccc;
 	 margin-top: 6px;
@@ -50,7 +50,7 @@ input[type=email] {
 
   }
 input[type=password] {
-	width: 100%;
+	width: 130%;
 	padding: 12px;
 	border: 1px solid #ccc;
 	margin-top: 6px;
@@ -61,15 +61,15 @@ input[type=password] {
   }
 
 input[type=submit]:hover {
-	background-color: #abb1ab;
+	background-color: #404140;
 	padding: 12px 20px;
 	border-radius: 10px;
 	border: solid blanchedalmond;
 
   }
   input[type=submit] {
-	background-color: #2b2d2c;
-	color: white;
+	background-color: #3d3f3e;
+	color: rgb(212, 208, 208);
 	padding: 12px 20px;
 	border: none;
 	cursor: pointer;

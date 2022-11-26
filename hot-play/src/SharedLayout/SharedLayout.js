@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../NavBar/Navbar";
-import {Outlet} from "react-router-dom"   
+import {Outlet} from "react-router-dom"  
+import './SharedLayout.css' 
 function SharedLayout(props)
 {
     return(

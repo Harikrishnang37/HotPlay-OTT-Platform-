@@ -18,7 +18,7 @@ import image16 from'./demo_images/download2.jpeg'
 
 import './video.css'
 import { useEffect,useState } from 'react'
-import {AiOutlineRight} from 'react-icons/ai'
+import {AiOutlineRight,AiOutlineLeft} from 'react-icons/ai'
 
 
 
@@ -54,8 +54,8 @@ export default function BigSlider(props)
     }
 
     return(
-        <div className="parent" style={{display:'flex',overflow:'hidden'}}>
-            <button onClick={decrement} style={{display:'flex',flexDirection:'column'}}>mks</button>
+        <div className="small-parent" style={{display:'flex',overflow:'hidden'}}>
+            <button onClick={decrement} style={{position:'relative'}}><AiOutlineLeft/></button>
             <div style={{display:'flex',overflow:'hidden',position:'sticky'}}>{[array.map((image,index)=><img src={image} key={index} width='200px' style={{padding:'5px'}}/>)]}</div>
            <button onClick={increment} style={{position:'relative'}} ><AiOutlineRight></AiOutlineRight></button>
         </div>

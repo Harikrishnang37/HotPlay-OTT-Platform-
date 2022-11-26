@@ -8,6 +8,7 @@ export default function Home(props)
         <div className="Home-main">
             <BigSlider/>
             <SmallSlider />
+            <SmallSlider/>
             
         </div>
     )

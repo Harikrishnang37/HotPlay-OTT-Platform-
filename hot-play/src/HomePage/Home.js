@@ -1,13 +1,13 @@
 import React from "react";
-import HomeSpotlight from "./HomeSpotlight";
-import VideoStrip from "./VideoStrip";
+import BigSlider from "../VideoComponent/BigSlider";
+import SmallSlider from "../VideoComponent/SmallSlider";
 
 export default function Home(props)
 {
     return(
         <div className="Home-main">
-            <HomeSpotlight/>
-            <VideoStrip/>
+            <BigSlider/>
+            <SmallSlider />
             
         </div>
     )

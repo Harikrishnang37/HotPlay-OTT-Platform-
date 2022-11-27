@@ -3,6 +3,9 @@ import SignUp from './SignUpPage/SignUp';
 import SharedLayout from './SharedLayout/SharedLayout'
 import { Routes,Route  }  from 'react-router-dom';
 import Home from './HomePage/Home';
+import Movie from './HomePage/Movies';
+import Series from './HomePage/Series';
+import Exclusives from './HomePage/Exclusives';
 
 function App() {
   return (
@@ -12,9 +15,9 @@ function App() {
                 <Route path='Signup'  element={<SignUp/>}/>
                 <Route path='/App' element={<SharedLayout/>} >
                     <Route index element={<Home></Home>}/>
-                    {/* <Route path='/Movies'  element={<Movie/>}/>
-                    <Route path='/Web-series'  element={<Series/>}/>
-                    <Route path='/Exclusives' element={<Exclusives/>}/> */}
+                    <Route path='Movies'  element={<Movie/>}/>
+                    <Route path='Web-series'  element={<Series/>}/>
+                    <Route path='Exclusives' element={<Exclusives/>}/>
                 </Route>
         </Routes>
     </div>

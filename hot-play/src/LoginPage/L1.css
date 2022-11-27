@@ -1,20 +1,22 @@
 .title-Login{
 	border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: rgb(34, 2, 48);
 	padding: 10px;
 	text-align: center;
+	color: whitesmoke;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 	
 }
 .title-Login {
 	height: 55px;
-	background-color: #f2f2f2;
+	background-color: rgb(48, 19, 61);
   }
 
   .Login-box{
 	width: 50%;
 	display: flexbox;
-	background-color: #f2f2f2;
+	background-color: rgb(68, 29, 84);
+	color: whitesmoke;
 	margin: auto;
 	border-radius: 5px;
 	text-align: center;
@@ -23,7 +25,7 @@
 .Login-form{
 	width:100%;
 	display: flexbox;
-	background-color: #f2f2f2;
+	background-color: rgb(68, 29, 84);
 	margin: auto;
 	border-radius: 5px;
 	text-align: center;
@@ -50,23 +52,24 @@ input[type=password] {
 
 .LoginBtn{
 	margin-bottom: 2.5%;
+	background-color:  rgb(68, 29, 84);
 }
 
 input[type=submit] {
-		background-color: #2b2d2c;
+		background-color: rgb(68, 29, 84);
 		color: white;
 		padding: 12px 20px;
 		border: none;
-		cursor: pointer;
-		border-radius: 10px;
+		width:"20%";
+		font-size:16px;
+		transition: 0.2s;
 	  }
 
 input[type=submit]:hover {
-	background-color: #abb1ab;
+	background-color: rgb(184, 82, 224);
 	padding: 12px 20px;
-	border-radius: 10px;
-	border: solid blanchedalmond;
-
+	border-radius: 0.1px;
+	
   }
 
   table{
@@ -170,7 +173,7 @@ input[type=submit]:hover {
 }
 
 .signUp-button-From-signIn{
-	background-color: #2b2d2c;
+	background-color:  rgb(34, 2, 48);
 		color: white;
 		padding: 12px 20px;
 		border: none;

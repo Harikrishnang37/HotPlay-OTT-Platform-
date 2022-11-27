@@ -54,7 +54,7 @@ export default function BigSlider(props)
     }
 
     return(
-        <div className="small-parent" style={{display:'flex',overflow:'hidden'}}>
+        <div className="small-parent1" style={{display:'flex',overflow:'hidden'}}>
             <button onClick={decrement} ><AiOutlineLeft/></button>
             <div style={{display:'flex',overflow:'hidden'}}>{[array.map((image,index)=><img className='ss_image' src={image} key={index} width='200px' style={{padding:'5px'}}/>)]}</div>
            <button onClick={increment}  ><AiOutlineRight></AiOutlineRight></button>

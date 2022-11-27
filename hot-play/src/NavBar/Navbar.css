@@ -5,6 +5,7 @@
 	align-items: center;
 	column-gap: 25px;
 	justify-content:space-between;	
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .h1{
 	color: aliceblue;
@@ -33,6 +34,7 @@
 	height: 30px;
 	width: 300px;
 	border-radius: 5px;
+	display: inline-block	;
 }
 .search-button{
 	height: 50px;
@@ -70,18 +72,27 @@
 	background-color: transparent;
 	border: none;
 	font-size: 18px;
-	color:aliceblue
+	color:aliceblue;
+	transition:0.2s;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	
 	
 }
 
 .nav-button:hover{
 	height: fit-content;
 	width: fit-content;
-	background-color:rgb(189, 90, 228);
-	border: 0.1px solid paleturquoise;
+	background-color:rgb(172, 17, 234);
 	border-radius: 5px;
 	font-size: 20px;
-	color:aliceblue
+	color:aliceblue;
+	padding: 5px;
 	
 }
  
+
+@media (max-width:1056px) {
+	.title-navbar{
+		display: flex;
+	}
+}

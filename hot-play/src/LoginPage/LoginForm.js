@@ -26,7 +26,7 @@ export default function LoginForm (props)
                 </table>
                 </div>
                 <div className='LoginBtn'>
-                <input type = "submit" value = "Log In" style={{width:"20%",fontSize:"16px"}}/> <br/>
+                <input type = "submit" value = "Log In" /> <br/>
                 </div>
 
                 <div className='other-signIn-options'>

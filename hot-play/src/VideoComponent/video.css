@@ -5,17 +5,87 @@
 	background-color: transparent;
 	color:violet;
 	border: none;
+	transition: 0.3s;
 }
 .Big-parent svg{
 	font-size: 35px;
 }
+.Big-parent button svg:hover{
+    font-size: 45px;
+}
 
+.small-parent svg{
+	font-size: 30px;
+}
 .small-parent{
-	margin-top: 30px;
+	margin-top: 10px;
+	
 }
 
 .small-parent button{
 	background-color: transparent;
 	color:violet;
 	border: none;
+	transition: 0.2s;
+}
+
+.small-parent button svg:hover{
+	background-color:transparent;
+	color: violet;
+    font-size: 38px;
+
+}
+.small-parent1 svg{
+	font-size: 30px;
+}
+.small-parent1{
+	margin-top: 20px;
+	
+}
+
+.small-parent1 button{
+	background-color: transparent;
+	color:violet;
+	border: none;
+	transition: 0.2s;
+}
+
+.small-parent1 button svg:hover{
+	background-color:transparent;
+	color: violet;
+    font-size: 38px;
+
+}
+
+.Title-Slider
+{
+	color: aliceblue;
+	margin-left: 60px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+#BigSliderTitle{
+	color: aliceblue;
+	margin-top: 140px;
+	margin-left: 300px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.ss_image{
+	border-radius: 8.5px;
+}
+
+.bs_image{
+	border-radius: 18.5px;
+}
+
+.Title-Slider1
+{
+	color: aliceblue;
+	margin-left: 60px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	margin-top: 140px;
+
 }

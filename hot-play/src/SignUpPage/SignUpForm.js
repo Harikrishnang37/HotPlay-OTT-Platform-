@@ -10,6 +10,8 @@ export default function SignUpForm (props)
     const [password,setPassword]=useState("")
     const [confirmPassword,setConfirmPassword]=useState("")
     const [isChecked,setIsChecked] = useState(false)
+    const navigate = useNavigate()
+
     function handleUser(event)
     {
         setUser(event.target.value)
@@ -30,47 +32,88 @@ export default function SignUpForm (props)
         setConfirmPassword(event.target.value)
     }
     
-    const navigate = useNavigate()
-    function handlechange()
+    async function handlechange(event)
     {
-      navigate('../');
+        event.preventDefault()
+        if(username && password && confirmPassword)
+        {
+            if(password.length <8)
+            {
+                alert("Password should be a minimum of 8 characters")
+                return
+            }
+            if(password != confirmPassword)
+            {
+                alert("Passwords dont match")
+                return
+            }
+            if(isChecked === false)
+            {
+                alert("Please agree to the terms and conditions")
+                return
+            }
+
+            const response=await fetch("http://localhost:8000/post",{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({name:username,password:password})
+            })
+            const data = await response.text()
+            console.log(data)
+
+            if(data === "true")
+            {
+                navigate('../');
+            }
+            else
+            {
+                alert("This email is already registered.")
+            }
+            
+
+            
+        }
+
+      //navigate('../');
     }
     return(
         <div className='signUp-box'>
             <h2> Sign Up</h2>
-            <form className='signUp-form'>
+            <form className='signUp-form' onSubmit={handlechange}>
                 <table>
-                <tr>
-                <td><label>Email:</label></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><input type = "email" placeholder='email' onChange={handleUser} value={username}/> <br/></td>
-                </tr>
-                <tr>
-                <td><label>Password:</label></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><input type = "password" placeholder='password' onChange={handlePassword} value={password}/> <br/></td>
-                </tr>
-                <tr>
-                <td><label>Password:</label></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td><input type = "password" placeholder='confirm password' onChange={handle_confirmPassword} value={confirmPassword}/> <br/></td>
-                </tr>
+                    <tbody>
+                        <tr>
+                        <td><label>Email:</label></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type = "email" placeholder='email' onChange={handleUser} value={username}/> <br/></td>
+                        </tr>
+                        <tr>
+                        <td><label>Password:</label></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type = "password" placeholder='password' onChange={handlePassword} value={password}/> <br/></td>
+                        </tr>
+                        <tr>
+                        <td><label>Password:</label></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><input type = "password" placeholder='confirm password' onChange={handle_confirmPassword} value={confirmPassword}/> <br/></td>
+                        </tr>
+                    </tbody>
                 </table>
-                <input type = "checkbox" className='TC'/>I agree to the terms and Conditions <br/>
+                <input type = "checkbox" className='TC' onChange={handlecheck} value ={isChecked}/>I agree to the terms and Conditions <br/>
 
-                <input type = "submit" value = "Sign Up" onClick={handlechange}/> <br/>
+                <input type = "submit" value = "Sign Up" /> <br/>
             </form>
            
         </div>

@@ -15,12 +15,15 @@ export default function LoginForm (props)
         if(username && password)
         {   
              const user_data={name:username,password:password}
-            const response=await fetch("http://localhost:8000/",{
+            const response=await fetch("http://localhost:8000",{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({name:username,password:password})
             })
             const data = await response.json()
+            console.log(data)
+            if(data===null)
+                alert("User not found!")
             if(data.name==username && data.password==password)
             {
                 setUser("")

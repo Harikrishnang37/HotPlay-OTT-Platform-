@@ -1,28 +1,68 @@
-import React from 'react';
+import {React,useState} from 'react';
 import  './L1.css';
 import { useNavigate } from "react-router-dom";
 
 
 export default function LoginForm (props)
-{   const navigate = useNavigate()
+{   
+    const navigate = useNavigate()
+    const [username,setUser]=useState("")
+    const [password,setPassword]=useState("")
+
+     async function handleSubmit(event)
+    {   
+        event.preventDefault()
+        if(username && password)
+        {   
+             const user_data={name:username,password:password}
+            const response=await fetch("http://localhost:8000/",{
+                method:'POST',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({name:username,password:password})
+            })
+            const data = await response.json()
+            if(data.name==username && data.password==password)
+            {
+                setUser("")
+                setPassword("")
+                navigate('/App')
+            }
+        }
+    }
+
+    function handleUser(event)
+    {
+        setUser(event.target.value)
+       // console.log(event.target.value)
+    }
+
+    function handlePassword(event)
+    {
+        setPassword(event.target.value)
+        // console.log(event.target.value)
+    }
+
     function handlechange()
-{
-  navigate('Signup');
-}
+    {
+        navigate('Signup');
+    }
+
     return(
         <div className='Login-box'>
             <h2> Login</h2>
-            <form className='Login-form'>
+            <form className='Login-form' onSubmit={handleSubmit}>
                 <div className='email-and-password'>
                 <table>
+                <tbody>
                 <tr>
                 <td>Email:</td>
-                <td><input type = "email" placeholder='email'style={{width:300}}/> <br/></td></tr>
+                <td><input type = "email" placeholder='email'style={{width:300}} value={username} onChange={handleUser}/> <br/></td></tr>
                 <tr>
                 <td>Password:</td>
-                <td><input type = "password" style={{width:300}}/></td>
+                <td><input type = "password" style={{width:300}} value={password} onChange={handlePassword}/></td>
                 <td><a className='forgot-password' href='www.google.com'>forgot password?</a></td>
                 </tr>
+                </tbody>
                 </table>
                 </div>
                 <div className='LoginBtn'>

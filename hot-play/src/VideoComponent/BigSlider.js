@@ -15,9 +15,17 @@ import {AiOutlineRight,AiOutlineLeft} from 'react-icons/ai'
 
 export default function BigSlider(props)
 {   const[index,setIndex]=useState(0)
-    const hello = [
-       image1,image2,image3,image4,image5,image6,image7,image8,image9
-    ]
+    const[hello,setHello]=useState([])
+    //console.log(props.data)
+
+    useEffect(()=>{
+        fetch("http://localhost:6900",{
+                method:'GET',
+                headers:{'Content-Type':'application/json'},
+            }).then((res)=>res.json())
+            .then((data)=>setHello(data))
+            
+    },[])
 
     function increment()
     {   
@@ -31,10 +39,14 @@ export default function BigSlider(props)
         setIndex(index=>index-1)
     }
 
+    if(hello.length === 0)
+    {
+        return(<div></div>)
+    }
     return(
         <div className="Big-parent" style={{display:'flex',justifyContent:"center"}}>
             <button onClick={decrement}><AiOutlineLeft/></button>
-            <img className='bs_image' src={hello[index]} width='800px' style={{padding:'10px'}}   alt="" />
+            <img className='bs_image' src={`http://localhost:6900/${hello[index].id}`} width='800px' style={{padding:'10px'}}   alt="" />
            <button onClick={increment} style={{opacity:'0,5',color:'violet'}}><AiOutlineRight/></button>
         </div>
     )

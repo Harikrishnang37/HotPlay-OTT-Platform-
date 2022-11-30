@@ -9,7 +9,7 @@ function Movies() {
 	
 	<div className="Home-main">
 	<BigSlider/>
-	<h2 className="Title-Slider">Latest and Trending</h2>
+	<h2 className="Title-Slider">Latest ing</h2>
 	<SmallSlider />
 	<h2 className="Title-Slider">Top Rated</h2>
 	<SmallSlider/>

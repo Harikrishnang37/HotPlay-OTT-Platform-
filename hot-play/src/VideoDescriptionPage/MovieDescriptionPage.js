@@ -10,8 +10,9 @@ export default function MovieDescriptionPage (props)
         <div className="MovieDescriptionPage">
             <VideoPlayer></VideoPlayer>
             <VideoDescription></VideoDescription>
-            <Rating></Rating>
+            {/* <Rating></Rating> */}
             <Options></Options>
+            hfoigewhgfhgiahilehgo
         </div>
     )
 }

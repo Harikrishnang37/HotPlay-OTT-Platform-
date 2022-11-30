@@ -6,6 +6,8 @@ import Home from './HomePage/Home';
 import Movie from './HomePage/Movies';
 import Series from './HomePage/Series';
 import Exclusives from './HomePage/Exclusives';
+import MovieDescriptionPage from "./VideoDescriptionPage/MovieDescriptionPage"
+import SeriesDescriptionPage from './VideoDescriptionPage/SeriesDescriptionPage'
 
 function App() {
   return (
@@ -15,8 +17,12 @@ function App() {
                 <Route path='Signup'  element={<SignUp/>}/>
                 <Route path='/App' element={<SharedLayout/>} >
                     <Route index element={<Home></Home>}/>
-                    <Route path='Movies'  element={<Movie/>}/>
-                    <Route path='Web-series'  element={<Series/>}/>
+                    <Route exact path='Movies'  element={<Movie/>}>
+                      <Route path = ":id" element= {<MovieDescriptionPage/>}/>
+                    </Route>
+                    <Route path='Web-series'  element={<Series/>}>
+                      <Route path = ":id" element= {<SeriesDescriptionPage/>}/>
+                    </Route>
                     <Route path='Exclusives' element={<Exclusives/>}/>
                 </Route>
         </Routes>

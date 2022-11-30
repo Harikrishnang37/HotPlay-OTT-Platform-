@@ -8,10 +8,11 @@
 	transition: 0.3s;
 }
 .Big-parent svg{
-	font-size: 35px;
+	font-size: 45px;
 }
 .Big-parent button svg:hover{
-    font-size: 45px;
+    font-size: 55px;
+	
 }
 
 .small-parent svg{
@@ -19,6 +20,7 @@
 }
 .small-parent{
 	margin-top: 10px;
+	transform: translateX(calc(var(--slider-index) * -100%));
 	
 }
 
@@ -33,6 +35,7 @@
 	background-color:transparent;
 	color: violet;
     font-size: 38px;
+	
 
 }
 .small-parent1 svg{
@@ -40,6 +43,7 @@
 }
 .small-parent1{
 	margin-top: 20px;
+	transform: translateX(calc(var(--slider-index) * -100%));
 	
 }
 
@@ -72,13 +76,37 @@
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
 }
+.increment{
+	margin-left: 20px;
+}
+
+.decrement{
+	margin-right: 20px;
+}
 
 .ss_image{
 	border-radius: 8.5px;
+	transition: 0.5s ease ;
+
+}
+.ss_image:hover{
+	
+    transform: scale(1.05);
+    transition: 0.3s ease-in-out;
+	z-index: -1;
+
 }
 
 .bs_image{
 	border-radius: 18.5px;
+	transition: 0.8s;
+}
+.bs_image:hover{
+    
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+	z-index: -1;
+	
 }
 
 .Title-Slider1

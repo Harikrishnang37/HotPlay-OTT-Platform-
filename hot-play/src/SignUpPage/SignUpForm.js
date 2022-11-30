@@ -11,6 +11,12 @@ export default function SignUpForm (props)
     const [confirmPassword,setConfirmPassword]=useState("")
     const [isChecked,setIsChecked] = useState(false)
     const navigate = useNavigate()
+    const show =(id)=>{
+       var x = document.getElementById(id);
+       x.className = 'show';
+       setTimeout(()=>{ x.className = x.className.replace("show", ""); }, 3000);
+
+    }
 
     function handleUser(event)
     {
@@ -40,16 +46,19 @@ export default function SignUpForm (props)
             if(password.length <8)
             {
                 alert("Password should be a minimum of 8 characters")
+                show('min_8');
                 return
             }
             if(password != confirmPassword)
             {
                 alert("Passwords dont match")
+                show('dm');
                 return
             }
             if(isChecked === false)
             {
                 alert("Please agree to the terms and conditions")
+                show('t&c');
                 return
             }
 
@@ -68,6 +77,7 @@ export default function SignUpForm (props)
             else
             {
                 alert("This email is already registered.")
+                show('email');
             }
             
 
@@ -114,6 +124,10 @@ export default function SignUpForm (props)
                 <input type = "checkbox" className='TC' onChange={handlecheck} value ={isChecked}/>I agree to the terms and Conditions <br/>
 
                 <input type = "submit" value = "Sign Up" /> <br/>
+                <div className='hidden' id='min_8'>Password should be a minimum of 8 characters</div>
+                <div className='hidden' id='dm'>Passwords dont match</div>
+                <div className='hidden' id='t&c'>Please agree to the terms and conditions</div>
+                <div className='hidden'id='email'>This email is already registered</div>
             </form>
            
         </div>

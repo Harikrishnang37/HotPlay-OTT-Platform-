@@ -8,9 +8,11 @@ export default function TitleBar (props)
             <h1 className='h1'>HOTPLAY</h1>
             <div className="search-div">
                 <div className="searchbutton">
-                <input type="text" className="search"/>
-                <button className="search-button"><BiSearch/></button></div>
-                <div className="user-profile"><BiUserCircle/></div>
+                <div className="input-div">
+                <input type="text" className="search"/></div>
+                <div><button className="search-button"><BiSearch/></button></div>
+                <div className="user-profile"><BiUserCircle/></div></div>
+                
             </div>
 
         </div>

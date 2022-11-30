@@ -1,10 +1,11 @@
 .title-signUp{
 	
 	border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: rgb(34, 2, 48);
 	padding: 10px;
 	text-align: center;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: aliceblue;
 	
 
 } 
@@ -12,14 +13,16 @@
 
 .title-signUp {
 	height: 55px;
-	background-color: #f2f2f2;
+	background-color:rgb(48, 19, 61);
+	color: aliceblue;
   }
 
 .signUp-box{
 	width: 50%;
-	background-color: #f2f2f2;
+	background-color: rgb(68, 29, 84);
 	margin: auto;
 	border-radius: 5px;
+	color: aliceblue;
 	text-align: center;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 	
@@ -29,9 +32,10 @@
 
 .signUp-form{
 	width:100%;
-	background-color: #f2f2f2;
+	background-color:   rgb(68, 29, 84);
 	border-radius: 5px;
 	text-align: center;
+	color: aliceblue;
 	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 
 }
@@ -61,19 +65,22 @@ input[type=password] {
   }
 
 input[type=submit]:hover {
-	background-color: #404140;
+	background-color:rgb(104, 40, 130);
 	padding: 12px 20px;
 	border-radius: 10px;
-	border: solid blanchedalmond;
+	font-size: 16px;
+	
 
   }
   input[type=submit] {
-	background-color: #3d3f3e;
+	background-color:  rgb(34, 2, 48);
 	color: rgb(212, 208, 208);
 	padding: 12px 20px;
+	font-size: 18px;
 	border: none;
 	cursor: pointer;
 	border-radius: 10px;
+	transition: 0.3s;
   }
   input[type=checkbox] {
 	padding: 12px;

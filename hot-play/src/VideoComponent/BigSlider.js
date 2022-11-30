@@ -8,8 +8,8 @@ import image7 from'./demo_images/download16.jpeg'
 import image8 from'./demo_images/download17.png'
 import image9 from'./demo_images/download18.png'
 import './video.css'
-import { useEffect,useState } from 'react'
-import {AiOutlineRight,AiOutlineLeft} from 'react-icons/ai'
+import { useEffect,useState } from 'react';
+import {TfiAngleLeft,TfiAngleRight} from 'react-icons/tfi';
 
 
 
@@ -33,9 +33,10 @@ export default function BigSlider(props)
 
     return(
         <div className="Big-parent" style={{display:'flex',justifyContent:"center"}}>
-            <button onClick={decrement}><AiOutlineLeft/></button>
+            <button className='decrement' onClick={decrement}><TfiAngleLeft/></button>
+            
             <img className='bs_image' src={hello[index]} width='800px' style={{padding:'10px'}}   alt="" />
-           <button onClick={increment} style={{opacity:'0,5',color:'violet'}}><AiOutlineRight/></button>
+           <button className='increment' onClick={increment} style={{opacity:'0,5',color:'violet'}}><TfiAngleRight/></button>
         </div>
     )
 }

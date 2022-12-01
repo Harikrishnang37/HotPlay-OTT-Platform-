@@ -27,15 +27,15 @@ run()
 })
 
 //For Series Description page
-router.get('/Series/:id/:season/:ep', (req,res)=>{
-    const client= new MongoClient("mongodb://127.0.0.1:27017/harikris")
+router.get('/Series/:id/:season/:episode', (req,res)=>{
+    const client= new MongoClient("mongodb://127.0.0.1:27017/Play4H")
 
     async function run() {
     try {
-    const database = client.db('harikris');
-    const movies = database.collection('SeriesData');
+    const database = client.db('Play4H');
+    const movies = database.collection('Series');
     
-    const movie = await movies.findOne({id: req.params.id , season: req.params.season , ep: req.params.ep});
+    const movie = await movies.findOne({id: parseInt(req.params.id) , season: parseInt(req.params.season) , episode: parseInt(req.params.episode)});
     
     res.json(movie);
 

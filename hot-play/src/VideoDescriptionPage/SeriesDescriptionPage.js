@@ -4,6 +4,7 @@ import Rating from "./Ratings"
 import VideoDescription from "./VideoDescription";
 import Episodes from "./Episodes";
 import Options from "./Options";
+import {useState, useEffect} from 'react'
 import { useParams } from "react-router-dom";
 
 export default function SeriesDescriptionPage (props)
@@ -12,10 +13,9 @@ export default function SeriesDescriptionPage (props)
     const [SeriesData, setSeriesData] = useState({})
 
     useEffect(()=>{
-        fetch(`http://localhost:8000/single/series/${param.id}/${param.season}/${param.ep}`,{
+        fetch(`http://localhost:8000/single/series/${param.id}/${param.season}/${param.episode}`,{
                 method:'GET',
                 headers:{'Content-Type':'application/json'},
-                body: JSON.stringify({id: param.id})
             }).then((res)=>res.json())
             .then((data)=>setSeriesData(data))
             
@@ -28,11 +28,11 @@ export default function SeriesDescriptionPage (props)
 
     return(
         <div className="SeriesDescriptionPage">
-            <VideoPlayer type = "Series" id = {param.id} season = {param.season} ep = {param.ep}></VideoPlayer>
+            <VideoPlayer type = "Series" id = {param.id} season = {param.season} ep = {param.episode}></VideoPlayer>
             <VideoDescription title = {SeriesData.name} desc = {SeriesData.desc}></VideoDescription>
             {/* <Rating></Rating>
             <Options></Options> */}
-            <Episodes id = {param.id} season = {param.season} ep = {param.ep}></Episodes>
+            <Episodes nos = {SeriesData.no_of_seasons} id = {param.id} season = {param.season} episode = {param.episode}></Episodes>
         </div>
         
     )

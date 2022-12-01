@@ -42,8 +42,8 @@ export default function BigSlider(props)
         <div className="Big-parent" style={{display:'flex',justifyContent:"center"}}>
             <button onClick={decrement}><TfiAngleLeft/></button>
             <div className='forBigLink'>
-                <Link to = {hello[index].type==="movie"?`/App/Movies/${hello[index].id}`:`/App/Web-series/${hello[index].id}/${hello[index].season}/${hello[index].ep}`}>
-                    <img className='bs_image' src={`http://localhost:8000/image/movies/${hello[index].id}`} width='800px' style={{padding:'10px'}}/> 
+                <Link to = {hello[index].type==="movie"?`/App/Movies/${hello[index].id}`:`/App/Web-series/${hello[index].id}/${hello[index].season}/${hello[index].episode}`}>
+                    <img className='bs_image' src={`http://localhost:8000/image/${hello[index].type}s/${hello[index].id}`} width='800px' style={{padding:'10px'}}/> 
                 </Link>
             </div>
             {/* <img className='bs_image' src={`http://localhost:6900/${hello[index].id}`} width='800px' style={{padding:'10px'}}   alt="" /> */}

@@ -8,14 +8,15 @@ import React from 'react'
 export default function Series() {
   return (
 	<div className="Home-main">
+
 	<h2 className="Title-Slider1">Latest and Trending</h2>
-	<SmallSlider1 />
-	<h2 className="Title-Slider">Top Rated</h2>
-	<SmallSlider/>
+	<BigSlider from = "series" type = "u" />
+	<h2 className="Title-Slider" >Top Rated</h2>
+	<SmallSlider from = "series" type = "u"/>
 	<h2 className="Title-Slider">Recommended Shows and Movies</h2>
-	<SmallSlider/>
+	<SmallSlider from = "series" type = "u"/>
 	<h2 className="Title-Slider">Originals</h2>
-	<SmallSlider/>
+	<SmallSlider from = "series" type = "u"/>
 	
 </div>
   )

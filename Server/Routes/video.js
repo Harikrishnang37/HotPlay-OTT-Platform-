@@ -46,14 +46,14 @@ router.get('/movie/:id',(req,res)=>{
 
 
 //sends back path of image required. --- Called by sliders or VideoDescriptionPage
-router.get('Series/:id/:season/:ep',(req,res)=>{
+router.get('/series/:id/:season/:ep',(req,res)=>{
     const range = req.headers.range;
     if (!range) {
       res.status(400).send("Requires Range header");
     }
   
     // get video stats (about 61MB)
-    const videoPath = path.join(__dirname, `../Videos/Series/${req.params.id}/${req.params.season}/${req.params.ep}.mp4`);
+    const videoPath = path.join(__dirname, `../Videos/Series/vid1.mp4`);
     const videoSize = fs.statSync(videoPath).size;
   
     // Parse Range

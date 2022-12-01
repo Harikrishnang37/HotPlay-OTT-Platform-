@@ -18,6 +18,7 @@ const MongoClient = require('mongodb').MongoClient
             const movie = await movies.find({category: req.params.type}).toArray();
             //console.log(movie)
             //console.log(req.body)
+            
             res.send(movie);
         } 
         finally {

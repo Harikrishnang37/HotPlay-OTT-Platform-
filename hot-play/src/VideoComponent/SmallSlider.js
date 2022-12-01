@@ -48,7 +48,7 @@ export default function SmallSlider(props)
         <div className="small-parent" style={{display:'flex',overflow:'hidden'}}>
             <button onClick={decrement} ><AiOutlineLeft/></button>
             <div style={{display:'flex',overflow:'hidden'}}>
-                {[array.map((element,index)=><Link to = {element.type==="movie"?`/App/Movies/${element.id}`:`/App/Web-series/${element.id}/${element.season}/${element.ep}`} key = {index}><img className='ss_image' src={`http://localhost:8000/image/${element.type}s/${element.id}`} width='200px' style={{padding:'5px'}}/> </Link>)]}
+                {[array.map((element,index)=><Link to = {element.type==="movie"?`/App/Movies/${element.id}`:`/App/Web-series/${element.id}/${element.season}/${element.episode}`} key = {index}><img className='ss_image' src={`http://localhost:8000/image/${element.type}s/${element.id}`} width='200px' style={{padding:'5px'}}/> </Link>)]}
             </div>
            <button onClick={increment}  ><AiOutlineRight></AiOutlineRight></button>
         </div>

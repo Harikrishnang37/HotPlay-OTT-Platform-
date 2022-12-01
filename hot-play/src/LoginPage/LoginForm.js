@@ -1,6 +1,7 @@
 import {React,useState} from 'react';
 import  './L1.css';
 import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 
 export default function LoginForm (props)
@@ -15,7 +16,7 @@ export default function LoginForm (props)
         if(username && password)
         {   
              const user_data={name:username,password:password}
-            const response=await fetch("http://localhost:8000",{
+            const response=await fetch("http://localhost:8000/user/login",{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({name:username,password:password})
@@ -28,7 +29,7 @@ export default function LoginForm (props)
             {
                 setUser("")
                 setPassword("")
-                navigate('/App')
+                navigate('/App',{state:data})
             }
         }
     }
@@ -63,7 +64,7 @@ export default function LoginForm (props)
                 <tr>
                 <td>Password:</td>
                 <td><input type = "password" style={{width:300}} value={password} onChange={handlePassword}/></td>
-                <td><a className='forgot-password' href='www.google.com'>forgot password?</a></td>
+                <td><div className='forgot-password'><Link to = "forgot-password">forgot password?</Link></div></td>
                 </tr>
                 </tbody>
                 </table>

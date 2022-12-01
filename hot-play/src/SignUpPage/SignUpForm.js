@@ -11,10 +11,11 @@ export default function SignUpForm (props)
     const [confirmPassword,setConfirmPassword]=useState("")
     const [isChecked,setIsChecked] = useState(false)
     const navigate = useNavigate()
-    const show =(id)=>{
+    const show = (id)=>{
        var x = document.getElementById(id);
        x.className = 'show';
-       setTimeout(()=>{ x.className = x.className.replace("show", ""); }, 3000);
+       setTimeout(()=>{ x.className = x.className.replace("show", "hidden"); }, 3000);
+       
 
     }
 
@@ -62,7 +63,7 @@ export default function SignUpForm (props)
                 return
             }
 
-            const response=await fetch("http://localhost:8000/post",{
+            const response=await fetch("http://localhost:8000/user/signup",{
                 method:'POST',
                 headers:{'Content-Type':'application/json'},
                 body:JSON.stringify({name:username,password:password})

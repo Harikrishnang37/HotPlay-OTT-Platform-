@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import './video.css'
 import { useEffect,useState } from 'react';
 import {TfiAngleLeft,TfiAngleRight} from 'react-icons/tfi';
@@ -11,7 +11,7 @@ export default function BigSlider(props)
     //console.log(props.data)
 
     useEffect(()=>{
-        fetch("http://localhost:6900",{
+        fetch(props.from === "Home"?`http://localhost:8000/Home/${props.type}}`:`http://localhost:8000/data/${props.from}/featured`,{
                 method:'GET',
                 headers:{'Content-Type':'application/json'},
             }).then((res)=>res.json())
@@ -38,7 +38,12 @@ export default function BigSlider(props)
     return(
         <div className="Big-parent" style={{display:'flex',justifyContent:"center"}}>
             <button onClick={decrement}><TfiAngleLeft/></button>
-            <img className='bs_image' src={`http://localhost:6900/${hello[index].id}`} width='800px' style={{padding:'10px'}}   alt="" />
+            <div className='forBigLink'>
+                <Link to = {element.type==="movie"?`/App/Movies/${hello[index].id}`:`/App/Web-series/${hello[index].id}/${hello[index].season}/${hello[index].ep}`}>
+                    <img className='bs_image' src={`http://localhost:8000/image/${props.from}/${hello[index].id}`} width='800px' style={{padding:'10px'}}/> 
+                </Link>
+            </div>
+            {/* <img className='bs_image' src={`http://localhost:6900/${hello[index].id}`} width='800px' style={{padding:'10px'}}   alt="" /> */}
            <button onClick={increment} style={{opacity:'0,5',color:'violet'}}><TfiAngleRight/></button>
         </div>
     )

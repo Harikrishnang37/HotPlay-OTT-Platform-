@@ -8,15 +8,15 @@ function Movies() {
   return (
 	
 	<div className="Home-main">
-	<BigSlider/>
-	<h2 className="Title-Slider">Latest ing</h2>
-	<SmallSlider />
-	<h2 className="Title-Slider">Top Rated</h2>
-	<SmallSlider/>
-	<h2 className="Title-Slider">Recommended Shows and Movies</h2>
-	<SmallSlider/>
-	<h2 className="Title-Slider">Originals</h2>
-	<SmallSlider/>
+		<BigSlider from="Movie" type="featured" />
+		<h2 className="Title-Slider">English Movies</h2>
+		<SmallSlider from="Movie" type = "EM" />
+		<h2 className="Title-Slider">Hindi Movies</h2>
+		<SmallSlider from="Movie" type = "HM"/>
+		<h2 className="Title-Slider">Telugu Movies</h2>
+		<SmallSlider from="Movie" type = "TM"/>
+		<h2 className="Title-Slider">Kannada Movies</h2>
+		<SmallSlider from="Movie" type = "KM"/>
 	
 </div>
   )

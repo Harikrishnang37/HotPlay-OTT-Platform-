@@ -25,9 +25,9 @@ const singleData = require('./Routes/singleData')
 app.use('/User', User)
 app.use('/data', data)
 app.use('/home',home)
-app.use('video', video)
-app.use('image',image)
-app.use('singleData', singleData)
+app.use('/video', video)
+app.use('/image',image)
+app.use('/single', singleData)
 
 app.listen(8000, ()=>console.log("Listening to port 8000"))
 

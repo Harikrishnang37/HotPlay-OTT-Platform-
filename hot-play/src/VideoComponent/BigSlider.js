@@ -11,11 +11,14 @@ export default function BigSlider(props)
     //console.log(props.data)
 
     useEffect(()=>{
-        fetch(props.from === "Home"?`http://localhost:8000/Home/${props.type}}`:`http://localhost:8000/data/${props.from}/featured`,{
+        fetch(props.from === "Home"?`http://localhost:8000/home/${props.type}`:`http://localhost:8000/data/${props.from}/featured`,{
                 method:'GET',
                 headers:{'Content-Type':'application/json'},
             }).then((res)=>res.json())
-            .then((data)=>setHello(data))
+            .then((data)=>{setHello(data)
+            //console.log(data)
+            })
+            
             
     },[])
 
@@ -39,8 +42,8 @@ export default function BigSlider(props)
         <div className="Big-parent" style={{display:'flex',justifyContent:"center"}}>
             <button onClick={decrement}><TfiAngleLeft/></button>
             <div className='forBigLink'>
-                <Link to = {element.type==="movie"?`/App/Movies/${hello[index].id}`:`/App/Web-series/${hello[index].id}/${hello[index].season}/${hello[index].ep}`}>
-                    <img className='bs_image' src={`http://localhost:8000/image/${props.from}/${hello[index].id}`} width='800px' style={{padding:'10px'}}/> 
+                <Link to = {hello[index].type==="movie"?`/App/Movies/${hello[index].id}`:`/App/Web-series/${hello[index].id}/${hello[index].season}/${hello[index].ep}`}>
+                    <img className='bs_image' src={`http://localhost:8000/image/movies/${hello[index].id}`} width='800px' style={{padding:'10px'}}/> 
                 </Link>
             </div>
             {/* <img className='bs_image' src={`http://localhost:6900/${hello[index].id}`} width='800px' style={{padding:'10px'}}   alt="" /> */}

@@ -5,10 +5,10 @@ export default function VideoDescription(props)
     return(
         <div className= "VideoDescription">
             <div className="VideoTitle">
-                Title
+                {props.title}
             </div>
             <p className="UnderTitle">
-                Paragraph
+                {props.desc}
             </p>
         </div>
     )

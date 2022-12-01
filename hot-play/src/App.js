@@ -24,7 +24,7 @@ function App() {
                     <Route path='Web-series'  element={<Series/>}/>
                     <Route path = "Web-series/:id/:season/:ep" element= {<SeriesDescriptionPage/>}/>
                     
-                    <Route path='Watchlist' element={<Watchlist/>}/>
+                    {/* <Route path='Watchlist' element={<Watchlist/>}/> */}
                 </Route>
         </Routes>
     </div>

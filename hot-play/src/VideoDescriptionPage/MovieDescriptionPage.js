@@ -14,9 +14,11 @@ export default function MovieDescriptionPage (props)
         fetch(`http://localhost:8000/single/movies/${param.id}`,{
                 method:'GET',
                 headers:{'Content-Type':'application/json'},
-                body: JSON.stringify({id: param.id})
             }).then((res)=>res.json())
-            .then((data)=>setMovieData(data))
+            .then((data)=>{
+                setMovieData(data)
+                //console.log(data)
+            })
             
     },[])
 
@@ -28,7 +30,7 @@ export default function MovieDescriptionPage (props)
     return(
         <div className="MovieDescriptionPage">
             <VideoPlayer type = "movie" id = {param.id}></VideoPlayer>
-            <VideoDescription title = {MovieData.name} desc = {MovieData.desc}></VideoDescription>
+            <VideoDescription title = {MovieData.title} desc = {MovieData.desc}></VideoDescription>
             {/* <Rating></Rating> */}
             {/* <Options></Options> */}
     

@@ -1,5 +1,7 @@
 const express = require('express')
 const router = express.Router()
+const path = require('path')
+const fs = require('fs')
 
 
 //sends back path of image required. --- Called by sliders or VideoDescriptionPage
@@ -11,7 +13,7 @@ router.get('/movie/:id',(req,res)=>{
   }
 
   // get video stats (about 61MB)
-  const videoPath = path.join(__dirname, `/Videos/Movies/${req.params.id}.mp4`);
+  const videoPath = path.join(__dirname, `../Videos/Movies/vid3.mp4`);
   const videoSize = fs.statSync(videoPath).size;
 
   // Parse Range
@@ -51,7 +53,7 @@ router.get('Series/:id/:season/:ep',(req,res)=>{
     }
   
     // get video stats (about 61MB)
-    const videoPath = path.join(__dirname, `/Videos/Series/${req.params.id}/${req.params.season}/${req.params.ep}.mp4`);
+    const videoPath = path.join(__dirname, `../Videos/Series/${req.params.id}/${req.params.season}/${req.params.ep}.mp4`);
     const videoSize = fs.statSync(videoPath).size;
   
     // Parse Range

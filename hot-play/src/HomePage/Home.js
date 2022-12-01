@@ -15,12 +15,12 @@ export default function Home(props)
         
         <div className="Home-main">
             <BigSlider from="Home" type="featured" />
-            <h2 className="Title-Slider">Larending</h2>
+            <h2 className="Title-Slider">Latest And Trending</h2>
             <SmallSlider from="Home" type = "LAT" />
             <h2 className="Title-Slider">Top Rated</h2>
             <SmallSlider from="Home" type = "TR"/>
             <h2 className="Title-Slider">Recommended Shows and Movies</h2>
-            <SmallSlider from="Home" type = "Reccomended"/>
+            <SmallSlider from="Home" type = "Recommended"/>
            
         </div>
     )

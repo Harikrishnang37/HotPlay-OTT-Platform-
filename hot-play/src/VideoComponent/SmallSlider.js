@@ -10,7 +10,7 @@ export default function SmallSlider(props)
     const [hello, setHello] = useState([])
     
     useEffect(()=>{
-        fetch(props.from === "Home"?`http://localhost:8000/Home/${props.type}}`:`http://localhost:8000/data/${props.from}/${props.type}}`,{
+        fetch(props.from === "Home"?`http://localhost:8000/home/${props.type}`:`http://localhost:8000/data/${props.from}/${props.type}`,{
                 method:'GET',
                 headers:{'Content-Type':'application/json'},
             }).then((res)=>res.json())
@@ -19,6 +19,7 @@ export default function SmallSlider(props)
     },[])
 
     var array = hello.slice(index)
+    //console.log(array)
     function increment()
     {   
         if(index===hello.length-6)
@@ -27,9 +28,10 @@ export default function SmallSlider(props)
             }
         else
             {setIndex(index=>index+1)
-                array = hello.slice(index+1,index+8)
+                array = hello.slice(index+1)
                 //console.log(array)
             }
+            //console.log()
 
     }
     //console.log(array)
@@ -46,7 +48,7 @@ export default function SmallSlider(props)
         <div className="small-parent" style={{display:'flex',overflow:'hidden'}}>
             <button onClick={decrement} ><AiOutlineLeft/></button>
             <div style={{display:'flex',overflow:'hidden'}}>
-                {[array.map((element,index)=><Link to = {element.type==="movie"?`/App/Movies/${element.id}`:`/App/Web-series/${element.id}/${element.season}/${element.ep}`} key = {index}><img className='ss_image' src={`http://localhost:8000/image/${hello[index].type}/${hello[index].id}`} width='200px' style={{padding:'5px'}}/> </Link>)]}
+                {[array.map((element,index)=><Link to = {element.type==="movie"?`/App/Movies/${element.id}`:`/App/Web-series/${element.id}/${element.season}/${element.ep}`} key = {index}><img className='ss_image' src={`http://localhost:8000/image/${element.type}s/${element.id}`} width='200px' style={{padding:'5px'}}/> </Link>)]}
             </div>
            <button onClick={increment}  ><AiOutlineRight></AiOutlineRight></button>
         </div>

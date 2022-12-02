@@ -4,6 +4,7 @@ import Rating from "./Ratings"
 import VideoDescription from "./VideoDescription";
 import Options from "./Options";
 import { json, useParams } from "react-router-dom";
+import Videodesc from "./Videodesc";
 
 export default function MovieDescriptionPage (props)
 {
@@ -29,8 +30,9 @@ export default function MovieDescriptionPage (props)
 
     return(
         <div className="MovieDescriptionPage">
-            <VideoPlayer type = "movie" id = {param.id}></VideoPlayer>
             <VideoDescription title = {MovieData.title} desc = {MovieData.desc}></VideoDescription>
+            <VideoPlayer type = "movie" id = {param.id}></VideoPlayer>
+            <Videodesc  desc = {MovieData.desc}></Videodesc>
             {/* <Rating></Rating> */}
             {/* <Options></Options> */}
     

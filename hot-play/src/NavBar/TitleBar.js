@@ -5,7 +5,7 @@ export default function TitleBar (props)
 {
     return (
         <div className='title-navbar'>
-            <h1 className='h1'>HOTPLAY</h1>
+            <h1 className='h1'>PLAY4H</h1>
             <div className="search-div">
                 <div className="searchbutton">
                 <div className="input-div">

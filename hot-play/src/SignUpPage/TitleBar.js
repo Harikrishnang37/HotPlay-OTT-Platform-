@@ -5,7 +5,7 @@ export default function TitleBar (props)
 {
     return (
         <div className='title-signUp'>
-            <h1>HOTPLAY</h1>
+            <h1>PLAY4H</h1>
         </div>
     )
 }

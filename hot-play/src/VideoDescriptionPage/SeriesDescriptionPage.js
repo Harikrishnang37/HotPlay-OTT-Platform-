@@ -6,7 +6,6 @@ import Episodes from "./Episodes";
 import Options from "./Options";
 import {useState, useEffect} from 'react'
 import { useParams } from "react-router-dom";
-import { useState ,useEffect} from "react";
 
 export default function SeriesDescriptionPage (props)
 {

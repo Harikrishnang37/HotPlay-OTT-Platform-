@@ -8,8 +8,6 @@ import React from 'react'
 export default function Series() {
   return (
 	<div className="Home-main">
-
-	<h2 className="Title-Slider1">Latest and Trending</h2>
 	<BigSlider from = "series" type = "u" />
 	<h2 className="Title-Slider" >Top Rated</h2>
 	<SmallSlider from = "series" type = "u"/>

@@ -8,8 +8,7 @@ export default function VideoPlayer(props)
 
     return(
         <div className="VideoPlayer">
-            
-            <ReactPlayer url = {props.type === "movie"?`http://localhost:8000/video/movie/${props.id}`: `http://localhost:8000/video/Series/${props.id}/${props.season}/${props.ep}`} controls></ReactPlayer>
+            <ReactPlayer  playing={true}  url = {props.type === "movie"?`http://localhost:8000/video/movie/${props.id}`: `http://localhost:8000/video/Series/${props.id}/${props.season}/${props.ep}`} controls width='800px' align='center' height='450px'></ReactPlayer>
         </div>
     )
 }

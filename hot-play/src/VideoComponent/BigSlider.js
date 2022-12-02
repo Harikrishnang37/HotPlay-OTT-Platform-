@@ -16,15 +16,18 @@ export default function BigSlider(props)
                 headers:{'Content-Type':'application/json'},
             }).then((res)=>res.json())
             .then((data)=>{setHello(data)
-            //console.log(data)
+            console.log("hi")
             })
             
             
     },[])
 
+    
+
     function increment()
     {   
         setIndex(index=>(index+1)%hello.length)
+        console.log("incremented")
     }
 
     function decrement()
@@ -43,7 +46,7 @@ export default function BigSlider(props)
             <button onClick={decrement}><TfiAngleLeft/></button>
             <div className='forBigLink'>
                 <Link to = {hello[index].type==="movie"?`/App/Movies/${hello[index].id}`:`/App/Web-series/${hello[index].id}/${hello[index].season}/${hello[index].episode}`}>
-                    <img className='bs_image' src={`http://localhost:8000/image/${hello[index].type}s/${hello[index].id}`} width='800px' style={{padding:'10px'}}/> 
+                    <img className='bs_image' src={`http://localhost:8000/image/${hello[index].type}s/${hello[index].id}`} width='800px' height='450px' style={{padding:'10px'}}/> 
                 </Link>
             </div>
             {/* <img className='bs_image' src={`http://localhost:6900/${hello[index].id}`} width='800px' style={{padding:'10px'}}   alt="" /> */}

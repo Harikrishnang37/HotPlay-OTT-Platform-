@@ -1,10 +1,10 @@
 import React from "react";
 import ReactPlayer from "react-player"
-
+import "./v.css";
 
 export default function VideoPlayer(props)
 {
-    const src = props.type=='Movie'?`dedjhjd`:`dkjkj`
+    const src = props.type==='Movie'?`dedjhjd`:`dkjkj`
 
     return(
         <div className="VideoPlayer">

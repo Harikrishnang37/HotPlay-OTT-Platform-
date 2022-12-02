@@ -28,8 +28,8 @@ export default function SeriesDescriptionPage (props)
 
     return(
         <div className="SeriesDescriptionPage">
+            <VideoDescription title = {SeriesData.title} desc = {SeriesData.desc}></VideoDescription>
             <VideoPlayer type = "Series" id = {param.id} season = {param.season} ep = {param.episode}></VideoPlayer>
-            <VideoDescription title = {SeriesData.name} desc = {SeriesData.desc}></VideoDescription>
             {/* <Rating></Rating>
             <Options></Options> */}
             <Episodes nos = {SeriesData.no_of_seasons} id = {param.id} season = {param.season} episode = {param.episode}></Episodes>

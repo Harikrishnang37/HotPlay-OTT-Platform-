@@ -9,6 +9,13 @@ export default function LoginForm (props)
     const navigate = useNavigate()
     const [username,setUser]=useState("")
     const [password,setPassword]=useState("")
+    const show = (id)=>{
+        var x = document.getElementById(id);
+        x.className = 'show';
+        setTimeout(()=>{ x.className = x.className.replace("show", "hidden"); }, 3000);
+        
+ 
+     }
     
      async function handleSubmit(event)
     {   
@@ -23,8 +30,9 @@ export default function LoginForm (props)
             })
             const data = await response.json()
             console.log(data)
-            if(data===null)
-                alert("User not found!")
+            if(data===null){
+                show("alert")
+            }
             if(data.name==username && data.password==password)
             {
                 setUser("")
@@ -64,11 +72,12 @@ export default function LoginForm (props)
                 <tr>
                 <td>Password:</td>
                 <td><input type = "password" style={{width:300}} value={password} onChange={handlePassword}/></td>
-                <td><div className='forgot-password'><Link to = "forgot-password">forgot password?</Link></div></td>
+                {/* <td><div className='forgot-password'><Link to = "forgot-password">forgot password?</Link></div></td> */}
                 </tr>
                 </tbody>
                 </table>
                 </div>
+                <div className='hidden' id='alert'>User not found!</div>
                 <div className='LoginBtn'>
                 <input className='login_btn' type = "submit" value = "Log In" /> <br/>
                 </div>

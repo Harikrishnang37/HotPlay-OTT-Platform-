@@ -10,7 +10,7 @@ export default function EpisodeInfo(props)
             </div>
             <div className="episode_desc">
                 <div className="ep_title">
-                   Episode {props.episode}
+                 <button className="epi_button">  Episode {props.episode}</button>
                 </div>
                 <p className="ep_more_info">
                    {props.desc}

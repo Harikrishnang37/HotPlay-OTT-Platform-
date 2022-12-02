@@ -201,3 +201,12 @@ input[type=password] {
 	margin-left: 50%;
 	width: max-content;
 }
+
+.hidden{
+	display: none;
+  }
+  .show{
+	color: yellow;
+	font-size: 15px;
+	margin-bottom: 10px;
+  }

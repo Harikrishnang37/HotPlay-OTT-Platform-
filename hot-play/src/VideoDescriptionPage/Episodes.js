@@ -42,12 +42,21 @@ export default function Episodes(props)
     return(
         <div className="Episodes">
             <div className="ep_selection">
-                <select name="" id="" value = {currentSeason} onChange = {handleChange}>
-                    {seasons.map((season, index)=>(<option key = {index} value = {season}>Season {season}</option>))}
+                <select className="select" name="" id="" value = {currentSeason} onChange = {handleChange}>
+                    {seasons.map((season, index)=>(<option className="option" key = {index} value = {season}>Season {season}</option>))}
                 </select>
             </div>
+            <div className="Epi">
+            {episodeList.map((element , index)=> 
+            <div className="Epi1">
+                <Link className="link1" key = {index} to = {`/app/Web-Series/${element.id}/${element.season}/${element.episode}`}>
+                    <EpisodeInfo episode = {element.episode} desc = {element.episode_desc}>
 
-            {episodeList.map((element , index)=> <Link key = {index} to = {`/app/Web-Series/${element.id}/${element.season}/${element.episode}`}><EpisodeInfo episode = {element.episode} desc = {element.episode_desc}></EpisodeInfo> </Link>)}
+                    </EpisodeInfo>
+                </Link>
+            </div>
+            )}
+            </div>
 
         </div>
         

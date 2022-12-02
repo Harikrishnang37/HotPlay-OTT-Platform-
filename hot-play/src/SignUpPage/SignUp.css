@@ -94,5 +94,6 @@ input[type=submit]:hover {
 	display: none;
   }
   .show{
-	color: aliceblue;
+	color: yellow;
+	font-size: 15px;
   }
